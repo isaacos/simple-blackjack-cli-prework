@@ -33,9 +33,8 @@ end
 
 def initial_round
   # code #initial_round here
-  first = deal_card
-  second = deal_card
-  puts display_card_total(first + second)
+  deal_card + deal_card
+  puts display_card_total(card_total)
 end
 
 def hit?
