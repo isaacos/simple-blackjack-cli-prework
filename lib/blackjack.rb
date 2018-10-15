@@ -6,6 +6,7 @@ end
 def deal_card
   # code #deal_card here
   rand(1..11)
+
 end
 
 def display_card_total (card_total)
@@ -38,19 +39,19 @@ def initial_round
    return deal_card + deal_card
 end
 
-def hit? (num)
+def hit? (new_total)
   # code hit? here
   prompt_user
  ans = get_user_input
   
   if ans == 's'
   elsif ans == 'h'
-  num = deal_card + num
+  new_total = deal_card + new_total
  else 
    invalid_command
    prompt_user
  end
- num
+ new_total
 end
 
 def invalid_command
@@ -66,15 +67,17 @@ def runner
  
   welcome
   
-  initial_round
-  hit?
-  display_card_total
-  until display_card_total > 21
-  hit?
+  card_total = initial_round
+  
+  
+  until card_total > 21
+  card_total = card_total + hit?(card_total)
+  display_card_total(card_total)
+
   
   
   
   end
-end_game
+end_game (card_total)
 end
     
