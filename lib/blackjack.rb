@@ -72,7 +72,7 @@ def runner
   hit? (card_total)
   
   while card_total < 21
-  hit?(card_total)
+  card_total = hit?(card_total)
   end
   
 end
