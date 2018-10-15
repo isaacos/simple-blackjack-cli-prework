@@ -63,7 +63,7 @@ end
 
 def runner
   # code runner here
- until display_card_total > 21
+ 
   welcome 
   initial_round
   hit?
